@@ -57,6 +57,6 @@ short	ft_minishell(char *line, char **env)
 	else if (type == 7)
 		return (print_env(env));
 	else if (type == 2)
-		handle_echo(&line[i], 1, 0);
+		return (handle_echo(&line[i], 1, 0));
 	return (0);
 }
