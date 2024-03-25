@@ -102,7 +102,7 @@ static	void	print_line(char *line, short flag)
 		handle_dquote(line, quotes, flag);
 }
 
-void	handle_echo(char *line, short q, short f)
+short	handle_echo(char *line, short q, short f)
 {
 	int		i;
 	short	flag;
