@@ -34,7 +34,7 @@ short	is_space(char c);
 short	is_pipe(char *line);
 short	print_env(char **env);
 void	print_color(char *str, char *color);
-void	handle_echo(char *line, short q, short f);
+short	handle_echo(char *line, short q, short f);
 char	*echo_readline(char *prompt);
 
 #endif
