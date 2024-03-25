@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-char	*ft_readline(char *prompt)
+char	*echo_readline(char *prompt)
 {
 	char	*line;
 	char	*temp;
