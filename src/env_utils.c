@@ -46,7 +46,7 @@ int	change_envpwd(t_env **env)
 	return (-1);
 }
 
-t_env	*env_lstnew(char *env)
+t_env	*env_lstnew(char *env, char **envp)
 {
 	t_env	*new;
 	int		i;
@@ -65,6 +65,7 @@ t_env	*env_lstnew(char *env)
 		new->name = ft_strdup(env);
 		new->value = NULL;
 	}
+	new->envp = envp;
 	new->unsetted = 0;
 	new->exported = 1;
 	new->next = NULL;
