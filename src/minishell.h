@@ -67,7 +67,7 @@ typedef struct s_data
 short		ft_execve(char *str, t_env *env);
 short		is_space(char c);
 t_env		*env_lstlast(t_env *lst);
-t_env		*env_lstnew(char *env);
+t_env		*env_lstnew(char *env, char **envp);
 void		env_lstclear(t_env *lst);
 void		env_lstadd_back(t_env **lst, t_env *new);
 int			len_to_first_space(char *s);
