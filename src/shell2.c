@@ -97,7 +97,7 @@ int	export_shell(t_env **env, t_line **line)
 	if (find_char((*line)->line, '=') < 1)
 	{
 		last = env_lstlast(*env);
-		last->next = env_lstnew(&((*line)->line[7]));
+		last->next = env_lstnew(&((*line)->line[7], last->envp));
 	}
 	handle_logic(line);
 	return (0);
