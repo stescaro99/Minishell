@@ -79,6 +79,7 @@ void	env_lstclear(t_env *lst)
 	while (lst)
 	{
 		temp = lst->next;
+		lst->envp = NULL;
 		free(lst->name);
 		free(lst->value);
 		free(lst);
