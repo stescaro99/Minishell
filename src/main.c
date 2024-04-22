@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+v/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
@@ -42,7 +42,7 @@ static	t_env	*set_envlist(char **env)
 	envlist = NULL;
 	while (env[i])
 	{
-		temp = env_lstnew(env[i]);
+		temp = env_lstnew(env[i], env);
 		if (!temp)
 			return (env_lstclear(envlist), NULL);
 		env_lstadd_back(&envlist, temp);
