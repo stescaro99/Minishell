@@ -16,7 +16,7 @@ all: $(NAME)
 
 $(NAME):
 	@make re -C $(LIBFT_DIR)
-	@$(CC) $(CFLAGS) -I $(LIBFT_DIR) $(SRCS) $(COMP_FLAGS) $(LIBFT) -o $(NAME)
+	@$(CC) $(CFLAGS) -I $(LIBFT_DIR) -L $(LIBFT_DIR) $(SRCS) -o $(NAME) $(COMP_FLAGS)
 
 clean:
 	make clean -C $(LIBFT_DIR)
