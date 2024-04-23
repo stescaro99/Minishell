@@ -130,10 +130,6 @@ int	pipe_shell(t_data *data, t_line **line)
 	end = 0;
 	fd_in = open_infile((*line)->line, &start);
 	fd_out = open_outfile((*line)->line, &end);
-	printf("fd_in: %d\n", fd_in);
-	printf("fd_out: %d\n", fd_out);
-	printf("start: %d\n", start);
-	printf("end: %d\n", end);
 	cmds = get_cmds((*line)->line, start, end, fd_in);
 	if (!cmds)
 		return (-1);
