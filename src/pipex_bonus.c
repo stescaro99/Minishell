@@ -90,7 +90,7 @@ int	pipex(t_data **data, char **argv, int fd_in, int fd_out)
 	or_stdin = dup(0);
 	while (argv[argc + 1])
 		argc++;
-	if (fd_in == -10 && argc--)
+	if (fd_in == -10)
 	{
 		ret = ft_heredoc(argv);
 		if (ret < 0)
@@ -98,7 +98,7 @@ int	pipex(t_data **data, char **argv, int fd_in, int fd_out)
 	}
 	else
 		(void)(dup2(fd_in, 0) + close(fd_in));
-	ret = child_raper(argc, argv, data, ret);
+	ret = child_raper(argc - (fd_in == -10), &argv[(fd_in == -10)], data, ret);
 	or_stdout = dup(1);
 	(void)(dup2(fd_out, 1) + close(fd_out));
 	ret += ft_execve(argv[argc], (*data)->env);
