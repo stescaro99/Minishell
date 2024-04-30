@@ -126,5 +126,6 @@ const char	*prompt_location(t_env *env);
 char		*get_name(char *s);
 t_memory	*get_memory_node(t_memory *lst, char *name);
 int		pipex_without_outfile(t_data *data, t_line **l, int fd_in, int i);
+char		**get_cmds(char *line, int start, int end, int fd_in);
 
 #endif
