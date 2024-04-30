@@ -37,7 +37,7 @@ static	char	**parse_heredoc(char *line)
 	return (add_str_front_to_matrix(cmds, limiter));
 }
 
-static	char	**get_cmds(char *line, int start, int end, int fd_in)
+char	**get_cmds(char *line, int start, int end, int fd_in)
 {
 	char	**cmds;
 	char	*tmp;
