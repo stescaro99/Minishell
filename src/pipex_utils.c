@@ -103,7 +103,7 @@ int	pipex_without_outfile(t_data *data, t_line **l, int fd_in, int i)
 	if (res < 0)
 		(*l)->exit = -1;
 	if (!count_cat || !cmds[count_cat])
-		return (handle_logic(l), res);
+		return (ft_freesplit(cmds), handle_logic(l), res);
 	while (count_cat--)
 	{
 		read_gnl(&tmp);
@@ -111,5 +111,5 @@ int	pipex_without_outfile(t_data *data, t_line **l, int fd_in, int i)
 		read_gnl(&tmp);
 		free(tmp);
 	}
-	return (handle_logic(l), res);
+	return (ft_freesplit(cmds), handle_logic(l), res);
 }
