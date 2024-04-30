@@ -84,3 +84,32 @@ void	file_error(char *file)
 	ft_putstr_fd("No such file or directory", 2);
 	ft_putstr_fd("\n", 2);
 }
+
+int	pipex_without_outfile(t_data *data, t_line **l, int fd_in, int i)
+{
+	char	**cmds;
+	int		count_cat;
+	int		res;
+	char	*tmp;
+	char	*line;
+
+	line = (*l)->line;
+	cmds = get_cmds(line, i, ft_strlen(line) - 1, fd_in);
+	count_cat = 0;
+	while (cmds[count_cat] && !strncmp(cmds[count_cat], "cat", 3)
+		&& is_space(cmds[count_cat][3]))
+		count_cat++;
+	res = pipex(data, &cmds[count_cat - (!cmds[count_cat])], fd_in, 1);
+	if (res < 0)
+		(*l)->exit = -1;
+	if (!count_cat || !cmds[count_cat])
+		return (handle_logic(l), res);
+	while (count_cat--)
+	{
+		read_gnl(&tmp);
+		free(tmp);
+		read_gnl(&tmp);
+		free(tmp);
+	}
+	return (handle_logic(l), res);
+}
