@@ -11,7 +11,7 @@ SRCS = src/env_utils.c src/exec_shell.c src/execve.c src/f_strjoin.c src/handle_
 		src/heredoc.c src/line_utils.c src/main.c src/memory_utils.c src/minishell.c \
 		src/utils2.c src/pipe_shell.c src/pipex_bonus.c	src/pipex_utils.c src/utils.c \
 		src/set_line.c src/set_lst_new.c src/shell_utils.c src/shell.c src/shell2.c \
-		src/awk_utils.c src/wildcards.c
+		src/awk_utils.c src/wildcards.c src/shell3
 
 all: $(NAME)
 
