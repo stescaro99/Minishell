@@ -1,4 +1,4 @@
-⚠️ The project is not finished, yet! ⚠️
+by stescaro (85%) and sfabi(2%)
 
 check valgrind track-fds=yes
 
